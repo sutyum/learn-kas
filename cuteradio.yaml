@@ -1,0 +1,16 @@
+header:
+  version: 1
+distro: poky
+machine: qemux86-64
+local_conf_header:
+  meta-poky: |
+    INHERIT += "extrausers"
+    EXTRA_USERS_PARAMS = "usermod -P tcr root;"
+repos:
+  poky:
+    url: "https://git.yoctoproject.org/git/poky"
+    refspec: "dunfell"
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
